@@ -40,10 +40,9 @@ Hooks.once('init', function () {
 
   // Note that you don't need to declare a DataModel
   // for the base actor/item classes - they are included
-  // with the Character/NPC as part of super.defineSchema()
+  // with the Character as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
     character: models.HtbahCharacter,
-    npc: models.HtbahNPC
   }
   CONFIG.Item.documentClass = HtbahItem;
   CONFIG.Item.dataModels = {

@@ -1,7 +1,6 @@
 // Export Actors
 export {default as HtbahActorBase} from "./base-actor.mjs";
 export {default as HtbahCharacter} from "./actor-character.mjs";
-export {default as HtbahNPC} from "./actor-npc.mjs";
 
 // Export Items
 export {default as HtbahItemBase} from "./base-item.mjs";
