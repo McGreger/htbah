@@ -4,6 +4,18 @@ export const HTBAH = {};
  * The set of Ability Scores used within the system.
  * @type {Object}
  */
+HTBAH.skillSets = {
+  phy: 'HTBAH.SkillSet.Phy.label',
+  kno: 'HTBAH.SkillSet.Kno.label',
+  soc: 'HTBAH.SkillSet.Soc.label',
+};
+
+HTBAH.skillSetAbbrevations = {
+  phy: 'HTBAH.SkillSet.Phy.abbr',
+  kno: 'HTBAH.SkillSet.Kno.abbr',
+  soc: 'HTBAH.SkillSet.Soc.abbr',
+};
+
 HTBAH.abilities = {
   str: 'HTBAH.Ability.Str.long',
   dex: 'HTBAH.Ability.Dex.long',

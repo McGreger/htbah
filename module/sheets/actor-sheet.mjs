@@ -12,7 +12,7 @@ export class HtbahActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['htbah', 'sheet', 'actor'],
-      width: 600,
+      width: 800,
       height: 600,
       tabs: [
         {

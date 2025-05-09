@@ -1,5 +1,10 @@
 {
   "HTBAH": {
+    "SkillSet": {
+      "Phy": { "label": "Physical", "abbr": "phy"},
+      "Kno": { "label": "Knowledge", "abbr": "kno"},
+      "Soc": { "label": "Social", "abbr": "soc"}
+    },
     "Ability": {
       "Str": { "long": "Strength", "abbr": "str" },
       "Con": { "long": "Constitution", "abbr": "con" },
