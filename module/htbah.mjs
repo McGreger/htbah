@@ -8,7 +8,7 @@ import { HtbahItemSheet } from './sheets/item-sheet.mjs';
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { HTBAH } from './helpers/config.mjs';
 // Import DataModel classes
-import * as models from './data/_module.mjs';
+import * as models from './dataModels/_module.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
