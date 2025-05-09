@@ -3,6 +3,18 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      <div class="ranks flexrow">
+        <label class="resource-label">Ranks</label>
+        <div></div>
+        <label class="resource-label">Skill Set</label>
+        <select name="system.set">
+          {{#each config.skillSets as |set key|}}
+            <option value="{{key}}" {{#if (eq ../system.set key)}}selected{{/if}}>
+              {{localize set.label}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
     </div>
   </header>
 
@@ -10,7 +22,6 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="attributes">Attributes</a>
-    <a class="item" data-tab="effects">Effects</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -27,10 +38,6 @@
       {{!-- As you add new fields, add them in here! --}}
     </div>
 
-    {{!-- Effects Tab --}}
-    <div class="tab effects" data-group="primary" data-tab="effects">
-      {{> "systems/htbah/templates/item/parts/item-effects.hbs"}}
-    </div>
   </section>
 
 </form>

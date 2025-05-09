@@ -5,15 +5,15 @@ export const HTBAH = {};
  * @type {Object}
  */
 HTBAH.skillSets = {
-  phy: 'HTBAH.SkillSet.Phy.label',
-  kno: 'HTBAH.SkillSet.Kno.label',
-  soc: 'HTBAH.SkillSet.Soc.label',
-};
-
-HTBAH.skillSetAbbrevations = {
-  phy: 'HTBAH.SkillSet.Phy.abbr',
-  kno: 'HTBAH.SkillSet.Kno.abbr',
-  soc: 'HTBAH.SkillSet.Soc.abbr',
+  phy: {
+    label: 'HTBAH.SkillSet.Phy.label'
+  },
+  kno: {
+    label: 'HTBAH.SkillSet.Kno.label'
+  },
+  soc: {
+    label: 'HTBAH.SkillSet.Soc.label'
+  }
 };
 
 HTBAH.abilities = {

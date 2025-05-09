@@ -132,14 +132,12 @@ export class HtbahActorSheet extends ActorSheet {
       }
     }
 
-    debugger;
-
     const skillSets = Object
     .entries(context.config.skillSets)
-    .map(([key, label]) => ({
-        label,
-        key,
-        skills: skills.filter(i => i.system.set === key) // Filter skills by set
+    .map(([key, set]) => ({
+      label: game.i18n.localize(set.label),
+      key,
+      skills: skills.filter(i => i.system.set === key) // filter skills by skillSet
     }));
 
     // Assign and return

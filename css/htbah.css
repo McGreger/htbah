@@ -364,3 +364,7 @@
 .htbah .effects .item .effect-controls {
   border: none;
 }
+
+.htbah .ranks {
+  align-items: center;
+}
