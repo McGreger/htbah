@@ -6,7 +6,7 @@
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     // Actor partials.
-    'systems/htbah/templates/actor/parts/actor-features.hbs',
+    'systems/htbah/templates/actor/parts/actor-skills.hbs',
     'systems/htbah/templates/actor/parts/actor-items.hbs',
     'systems/htbah/templates/actor/parts/actor-spells.hbs',
     'systems/htbah/templates/actor/parts/actor-effects.hbs',

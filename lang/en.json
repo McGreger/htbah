@@ -33,7 +33,7 @@
     },
     "Item": {
       "item": "Item",
-      "feature": "Feature",
+      "skill": "Skill",
       "spell": "Spell"
     }
   }

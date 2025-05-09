@@ -47,7 +47,7 @@ Hooks.once('init', function () {
   CONFIG.Item.documentClass = HtbahItem;
   CONFIG.Item.dataModels = {
     item: models.HtbahItem,
-    feature: models.HtbahFeature,
+    skill: models.HtbahSkill,
     spell: models.HtbahSpell
   }
 
