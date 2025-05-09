@@ -132,8 +132,19 @@ export class HtbahActorSheet extends ActorSheet {
       }
     }
 
+    debugger;
+
+    const skillSets = Object
+    .entries(context.config.skillSets)
+    .map(([key, label]) => ({
+        label,
+        key,
+        skills: skills.filter(i => i.system.set === key) // Filter skills by set
+    }));
+
     // Assign and return
     context.gear = gear;
+    context.skillSets = skillSets;
     context.skills = skills;
     context.spells = spells;
   }

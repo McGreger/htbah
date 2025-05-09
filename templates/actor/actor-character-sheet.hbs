@@ -58,25 +58,7 @@
     {{!-- Owned Skills Tab --}}
     <div class="tab skills" data-group="primary" data-tab="skills">
       <sections class="grid grid-3col">
-        {{#each config.skillSets as |skillSet key|}}
-          <ol class='items-list'>
-            <li class='item flexrow items-header'>
-              <div class='item-name'>
-                <label>{{localize (lookup @root.config.skillSets key)}}</label>
-              </div>
-              <div class='item-controls'>
-                <a
-                  class='item-control item-create'
-                  title='Create item'
-                  data-type='skill'
-                >
-                  <i class='fas fa-plus'></i>
-                </a>
-              </div>
-            </li>
-            {{> "systems/htbah/templates/actor/parts/actor-skills.hbs"}}
-          </ol>
-        {{/each}}
+        {{> "systems/htbah/templates/actor/parts/actor-skills.hbs"}}
       </sections>
       
       <section class="grid grid-3col">
