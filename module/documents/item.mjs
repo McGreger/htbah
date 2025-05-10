@@ -55,7 +55,7 @@ export class HtbahItem extends Item {
    * @param {Event} event   The originating click event
    * @private
    */
-  async roll() {
+  async roll(event) {
     const item = this;
 
     // Initialize chat data.
