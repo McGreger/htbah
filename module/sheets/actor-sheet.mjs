@@ -39,26 +39,26 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   /** @override */
     static PARTS = {
     header: {
-      template: 'systems/boilerplate/templates/actor/header.hbs',
+      template: 'systems/htbah/templates/actor/header.hbs',
     },
     tabs: {
       // Foundry-provided generic template
       template: 'templates/generic/tab-navigation.hbs',
     },
     features: {
-      template: 'systems/boilerplate/templates/actor/features.hbs',
+      template: 'systems/htbah/templates/actor/features.hbs',
     },
     biography: {
-      template: 'systems/boilerplate/templates/actor/biography.hbs',
+      template: 'systems/htbah/templates/actor/biography.hbs',
     },
     gear: {
-      template: 'systems/boilerplate/templates/actor/gear.hbs',
+      template: 'systems/htbah/templates/actor/gear.hbs',
     },
     spells: {
-      template: 'systems/boilerplate/templates/actor/spells.hbs',
+      template: 'systems/htbah/templates/actor/spells.hbs',
     },
     effects: {
-      template: 'systems/boilerplate/templates/actor/effects.hbs',
+      template: 'systems/htbah/templates/actor/effects.hbs',
     },
   };
 
@@ -95,8 +95,8 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
       // Add the actor's data to context.data for easier access, as well as flags.
       system: this.actor.system,
       flags: this.actor.flags,
-      // Adding a pointer to CONFIG.BOILERPLATE
-      config: CONFIG.BOILERPLATE,
+      // Adding a pointer to CONFIG.HTBAH
+      config: CONFIG.HTBAH,
       tabs: this._getTabs(options.parts),
     };
 
@@ -163,7 +163,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
         // FontAwesome Icon, if you so choose
         icon: '',
         // Run through localization
-        label: 'BOILERPLATE.Actor.Tabs.',
+        label: 'HTBAH.Actor.Tabs.',
       };
       switch (partId) {
         case 'header':
@@ -308,7 +308,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   /**
    * Handle changing a Document's image.
    *
-   * @this BoilerplateActorSheet
+   * @this HtbahActorSheet
    * @param {PointerEvent} event   The originating click event
    * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
    * @returns {Promise}
@@ -336,7 +336,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   /**
    * Renders an embedded document's sheet
    *
-   * @this BoilerplateActorSheet
+   * @this HtbahActorSheet
    * @param {PointerEvent} event   The originating click event
    * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
    * @protected
@@ -349,7 +349,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   /**
    * Handles item deletion
    *
-   * @this BoilerplateActorSheet
+   * @this HtbahActorSheet
    * @param {PointerEvent} event   The originating click event
    * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
    * @protected
@@ -362,7 +362,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   /**
    * Handle creating a new Owned Item or ActiveEffect for the actor using initial data defined in the HTML dataset
    *
-   * @this BoilerplateActorSheet
+   * @this HtbahActorSheet
    * @param {PointerEvent} event   The originating click event
    * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
    * @private
@@ -395,7 +395,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   /**
    * Determines effect parent to pass to helper
    *
-   * @this BoilerplateActorSheet
+   * @this HtbahActorSheet
    * @param {PointerEvent} event   The originating click event
    * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
    * @private
@@ -408,7 +408,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   /**
    * Handle clickable rolls.
    *
-   * @this BoilerplateActorSheet
+   * @this HtbahActorSheet
    * @param {PointerEvent} event   The originating click event
    * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
    * @protected

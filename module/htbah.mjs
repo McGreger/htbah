@@ -21,8 +21,8 @@ globalThis.htbah = {
     HtbahItem,
   },
   applications: {
-    BoilerplateActorSheet,
-    BoilerplateItemSheet,
+    HtbahActorSheet,
+    HtbahItemSheet,
   },
   utils: {
     rollItemMacro,
