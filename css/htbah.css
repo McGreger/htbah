@@ -300,8 +300,9 @@
 }
 .htbah .items-list .item-controls {
   display: flex;
-  flex: 0 0 100px;
+  flex: 0 0 20%;
   justify-content: flex-end;
+  
 }
 .htbah .items-list .item-controls a {
   font-size: 12px;
@@ -390,4 +391,101 @@
   box-shadow: none;
   outline: none;
   padding: 0;
+}
+
+.htbah .skillset-header {
+  display: flex;
+  width: 100%;
+}
+
+.htbah .skillset-icon {
+  flex: 0 0 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.htbah .skillset-label {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.5em;
+}
+
+.htbah .skillset-eureka {
+  flex: 0 0 38%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5em;
+  gap: 0.4em;
+}
+
+.htbah .skillset-eureka img {
+  width: 20px;
+  height: 20px;
+}
+
+.htbah .eureka-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 0.4em; /* space from the left edge of the eureka section */
+}
+
+.htbah .eureka-input {
+  width: 3em;
+  text-align: center;
+  font-size: 13px;
+  height: 1.8em;
+  padding: 0 0.4em;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  background: #f9f9f9;
+}
+
+.htbah .eureka-total {
+  font-size: 1.1em;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.htbah .items-list .item-name.skill-name {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+}
+
+.htbah .items-list .skill-modifiers {
+  flex: 0 0 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.1em;
+}
+
+.htbah .items-list .item-name.item-control {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: center;
+}
+
+
+.htbah .skill-ranks {
+  width: 3em;
+  min-width: 3em;
+  max-width: 3em;
+  flex: 0 0 auto;
+  padding: 0 0.25em;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  height: 1.6em;
+}
+
+.htbah .skill-dc-mod {
+  width: 2em;
+  min-width: 2em;
+  max-width: 2em;
 }
