@@ -1,6 +1,17 @@
 {{#each skillSets as |skillSet key|}}
   <ol class='items-list'>
-    <li class='item flexrow items-header'>
+    <li class='item flexrow items-header' >
+      <div class='item-image'>
+        <a class='rollable' data-roll-type='item'>
+          <img 
+            class='skill-icon'
+            src='{{this.icon}}'
+            title='{{this.label}}'
+            width='30'
+            height='30'
+          />
+        </a>
+      </div>
       <div class='item-name'>
         <label>{{localize this.label}}</label>
       </div>

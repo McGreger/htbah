@@ -144,6 +144,7 @@ export class HtbahActorSheet extends ActorSheet {
       return {
         key,
         label: game.i18n.localize(set.label),
+        icon: set.icon,
         skills: filteredSkills,
         modifier
       };
