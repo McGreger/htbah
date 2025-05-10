@@ -368,3 +368,11 @@
 .htbah .ranks {
   align-items: center;
 }
+
+.htbah .input-ranks {
+  max-width: 4em;
+  text-align: right;
+  margin-right: 0.5rem; /* adds space between fields */
+  padding: 0 0.2em;
+  box-sizing: border-box;
+}

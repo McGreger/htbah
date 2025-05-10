@@ -5,8 +5,8 @@
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="ranks flexrow">
         <label class="resource-label">Ranks</label>
-        <div></div>
-        <label class="resource-label">Skill Set</label>
+        <input class="input-ranks" type="number" name="system.ranks" value="{{system.ranks}}" />
+        <label class="resource-label">| Skill Set</label>
         <select name="system.set">
           {{#each config.skillSets as |set key|}}
             <option value="{{key}}" {{#if (eq ../system.set key)}}selected{{/if}}>
