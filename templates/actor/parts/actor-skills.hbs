@@ -5,15 +5,36 @@
         <a class='rollable' data-roll-type='item'>
           <img 
             class='skill-icon'
-            src='{{this.icon}}'
-            title='{{this.label}}'
+            src='{{icon}}'
+            title='{{label}}'
             width='30'
             height='30'
           />
         </a>
       </div>
-      <div class='item-name'>
-        <label>{{localize this.label}}</label>
+      <div class='item-name flexcol'>
+        <h2 class='resource-label'>{{localize label}}</h2>
+        <label>Modifier: {{mod}}</label>
+      </div>
+      <div class='eureka-points flexcol'>
+        <a class='rollable' data-roll-type='item'>
+          <img 
+            class='skill-icon'
+            src='systems/htbah/assets/icons/brainstorm.svg'
+            title='{{label}}'
+            width='20'
+            height='20'
+          />
+        </a>
+        <div class="flexrow">
+          <input
+            type="number"
+            name="system.skillSets.eureka.{{this.key}}.value"
+            value="{{eureka.value}}"
+            min="0"
+          />
+          <label>/ {{eureka.total}}</label>
+        </div>
       </div>
     </li>
     {{#each this.skills as |skill id|}}
@@ -37,7 +58,7 @@
         </div>
       </li>
     {{/each}}
-    <li class='item flexrow item-controls'>
+    <li class='item-controls'>
       <a
         class='item-control-footer item-create'
         title='Create item'
