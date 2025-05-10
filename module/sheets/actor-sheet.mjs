@@ -132,21 +132,36 @@ export class HtbahActorSheet extends ActorSheet {
       }
     }
 
-    debugger;
+    debugger; 
 
     const skillSets = Object
     .entries(context.config.skillSets)
     .map(([key, set]) => {
       const filteredSkills = skills.filter(i => i.system.set === key);
       const totalRanks = filteredSkills.reduce((sum, skill) => sum + (skill.system.ranks || 0), 0);
-      const modifier = Math.floor(totalRanks / 10);
+      const mod = Math.floor(totalRanks / 10);
+      const eurekaValue = context.system.skillSets.eureka?.[key]?.value ?? 0;
+      const eurekaMax = Math.floor(totalRanks / 100);
+  
+      // Attach derived display.total value
+      for (const skill of filteredSkills) {
+        const ranks = skill.system.ranks || 0;
+        skill.system = {
+          ...skill.system,
+          total: ranks + mod
+        };
+      }
   
       return {
         key,
         label: game.i18n.localize(set.label),
         icon: set.icon,
-        skills: filteredSkills,
-        modifier
+        skills: filteredSkills, // original skills preserved
+        mod,
+        eureka: {
+          value: eurekaValue,
+          max: eurekaMax
+        }
       };
     });
 
@@ -168,6 +183,10 @@ export class HtbahActorSheet extends ActorSheet {
       const li = $(ev.currentTarget).parents('.item');
       const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
+    });
+
+    html.find("input[type='number']").on("focus", function () {
+      this.select();
     });
 
     // -------------------------------------------------------------

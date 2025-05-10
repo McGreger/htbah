@@ -7,15 +7,15 @@ export const HTBAH = {};
 HTBAH.skillSets = {
   phy: {
     label: 'HTBAH.SkillSet.Phy.label',
-    icon: 'systems/htbah/assets/icons/strong.svg'
+    icon: 'systems/htbah/assets/icons/strong.svg',
   },
   kno: {
     label: 'HTBAH.SkillSet.Kno.label',
-    icon: 'systems/htbah/assets/icons/white-book.svg'
+    icon: 'systems/htbah/assets/icons/white-book.svg',
   },
   soc: {
     label: 'HTBAH.SkillSet.Soc.label',
-    icon: 'systems/htbah/assets/icons/talk.svg'
+    icon: 'systems/htbah/assets/icons/talk.svg',
   }
 };
 
