@@ -132,8 +132,6 @@ export class HtbahActorSheet extends ActorSheet {
       }
     }
 
-    debugger;
-
     const skillSets = Object
     .entries(context.config.skillSets)
     .map(([key, set]) => {

@@ -1,6 +1,6 @@
 {{#each skillSets as |skillSet key|}}
-  <ol class='items-list'>
-    <li class='item flexrow items-header' >
+  <ol class='items-list' data-item-id='{{this.key}}'>
+    <li class='item flexrow items-header skillset-header' >
       <div class='item-image'>
         <a class='rollable' data-roll-type='item'>
           <img 
@@ -14,15 +14,6 @@
       </div>
       <div class='item-name'>
         <label>{{localize this.label}}</label>
-      </div>
-      <div class='item-controls'>
-        <a
-          class='item-control item-create'
-          title='Create item'
-          data-type='skill'
-        >
-          <i class='fas fa-plus'></i>
-        </a>
       </div>
     </li>
     {{#each this.skills as |skill id|}}
@@ -46,5 +37,14 @@
         </div>
       </li>
     {{/each}}
+    <li class='item flexrow item-controls'>
+      <a
+        class='item-control-footer item-create'
+        title='Create item'
+        data-type='skill'
+      >
+        <i class='fas fa-plus'></i>
+      </a>
+    </li>
   </ol>
 {{/each}}
