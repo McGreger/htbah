@@ -132,13 +132,22 @@ export class HtbahActorSheet extends ActorSheet {
       }
     }
 
+    debugger;
+
     const skillSets = Object
     .entries(context.config.skillSets)
-    .map(([key, set]) => ({
-      label: game.i18n.localize(set.label),
-      key,
-      skills: skills.filter(i => i.system.set === key) // filter skills by skillSet
-    }));
+    .map(([key, set]) => {
+      const filteredSkills = skills.filter(i => i.system.set === key);
+      const totalRanks = filteredSkills.reduce((sum, skill) => sum + (skill.system.ranks || 0), 0);
+      const modifier = Math.floor(totalRanks / 10);
+  
+      return {
+        key,
+        label: game.i18n.localize(set.label),
+        skills: filteredSkills,
+        modifier
+      };
+    });
 
     // Assign and return
     context.gear = gear;

@@ -81,12 +81,6 @@ Handlebars.registerHelper('toLowerCase', function (str) {
   return str.toLowerCase();
 });
 
-Handlebars.registerHelper("json", function (context) {
-  return JSON.stringify(context, null, 2);
-});
-
-Handlebars.registerHelper("typeof", value => typeof value);
-
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
