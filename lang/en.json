@@ -1,5 +1,16 @@
 {
   "HTBAH": {
+    "SkillSet": {
+      "Phy": { "label": "Physical", "abbr": "phy"},
+      "Kno": { "label": "Knowledge", "abbr": "kno"},
+      "Soc": { "label": "Social", "abbr": "soc"}
+    },
+
+    "Actor": {
+      "EurekaPoints": { "label": "Eureka Points"},
+      "SkillSetMod": { "label": "Modifier"}
+    },
+
     "Ability": {
       "Str": { "long": "Strength", "abbr": "str" },
       "Con": { "long": "Constitution", "abbr": "con" },
