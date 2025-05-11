@@ -33,5 +33,19 @@
         </div>
       </div>
     {{/if}}
+    {{#if (eq item.type 'skill')}}
+      <div class='ranks grid grid-4col'>
+        <label class="resource-label">Ranks</label>
+        <input class="input-ranks" type="number" name="system.ranks" value="{{system.ranks}}" />
+        <label class="resource-label">Skill Set</label>
+        <select name="system.set">
+          {{#each config.skillSets as |set key|}}
+            <option value="{{key}}" {{#if (eq ../system.set key)}}selected{{/if}}>
+              {{localize set.label}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+    {{/if}}
   </div>
 </header>

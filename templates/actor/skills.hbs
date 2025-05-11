@@ -44,10 +44,15 @@
             <label class="eureka-total">/ {{eureka.max}}</label>
           </div>
         </li>
-        {{#each this.skills as |skill id|}}
-          <li class='item flexrow' data-item-id='{{skill._id}}'>
+        {{#each this.skills as |item id|}}
+          <li 
+            class='item flexrow'
+            data-item-id='{{item._id}}'
+            data-drag='true'
+            data-document-class='Item'
+          >
             <div class='item-name skill-name'>
-              <h4>{{skill.name}}</h4>
+              <h4>{{item.name}}</h4>
             </div>
             <div class="flexrow skill-modifiers">
               <input
@@ -55,7 +60,7 @@
                 type="number"
                 value="{{system.ranks}}"
               />
-              /<span class="skill-dc rollable" data-roll="d100" data-label="{{skill.name}}">{{system.total}}</span>
+              /<span class="skill-dc rollable" data-roll="d100" data-label="{{item.name}}">{{system.total}}</span>
             </div>
             <div class='item-controls'>
               <a
@@ -77,15 +82,18 @@
             </div>
           </li>
         {{/each}}
-        <li class='item-controls'>
+        {{#if @root.editable}}
           <a
             class='item-control-footer item-create'
-            title='Create item'
+            title='{{localize "DOCUMENT.Create" type='Item'}}'
+            data-action='createDoc'
+            data-document-class='Item'
             data-type='skill'
           >
             <i class='fas fa-plus'></i>
+            {{localize 'DOCUMENT.New' type='item'}}
           </a>
-        </li>
+        {{/if}}
       </ol>
     {{/each}}
   </section>

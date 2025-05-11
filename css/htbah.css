@@ -591,7 +591,6 @@
   align-items: center;
 }
 
-
 .htbah .skill-ranks {
   width: 3em;
   min-width: 3em;
@@ -609,4 +608,8 @@
   width: 2em;
   min-width: 2em;
   max-width: 2em;
+}
+
+.htbah h2 {
+  font-size: 2em;
 }

@@ -18,7 +18,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   static DEFAULT_OPTIONS = {
     classes: ['htbah', 'actor'],
     position: {
-      width: 800,
+      width: 1000,
       height: 600,
     },
     actions: {
@@ -66,16 +66,13 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   _configureRenderOptions(options) {
     super._configureRenderOptions(options);
     // Not all parts always render
-    options.parts = ['header', 'tabs', 'biography'];
+    options.parts = ['header', 'tabs'];
     // Don't show the other tabs if only limited view
     if (this.document.limited) return;
     // Control which parts show based on document subtype
     switch (this.document.type) {
       case 'character':
-        options.parts.push('skills', 'gear', 'spells', 'effects');
-        break;
-      case 'npc':
-        options.parts.push('gear', 'effects');
+        options.parts.push('skills', 'gear', 'spells', 'effects', 'biography');
         break;
     }
   }
@@ -156,7 +153,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     // If you have sub-tabs this is necessary to change
     const tabGroup = 'primary';
     // Default tab for first time it's rendered this session
-    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'biography';
+    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'skills';
     return parts.reduce((tabs, partId) => {
       const tab = {
         cssClass: '',
@@ -172,10 +169,6 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
         case 'header':
         case 'tabs':
           return tabs;
-        case 'biography':
-          tab.id = 'biography';
-          tab.label += 'Biography';
-          break;
         case 'skills':
           tab.id = 'skills';
           tab.label += 'Skills';
@@ -191,6 +184,10 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
         case 'effects':
           tab.id = 'effects';
           tab.label += 'Effects';
+          break;
+        case 'biography':
+          tab.id = 'biography';
+          tab.label += 'Biography';
           break;
       }
       if (this.tabGroups[tabGroup] === tab.id) tab.cssClass = 'active';
@@ -449,6 +446,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
    * @returns {Item | ActiveEffect} The embedded Item or ActiveEffect
    */
   _getEmbeddedDocument(target) {
+    debugger;
     const docRow = target.closest('li[data-document-class]');
     if (docRow.dataset.documentClass === 'Item') {
       return this.actor.items.get(docRow.dataset.itemId);
