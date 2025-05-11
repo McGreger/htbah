@@ -7,7 +7,7 @@ import { HtbahItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { HTBAH } from './helpers/config.mjs';
 // Import DataModel classes
-import * as models from './dataModels/_module.mjs';
+import * as models from './data/_module.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -48,7 +48,6 @@ Hooks.once('init', function () {
 
   // Note that you don't need to declare a DataModel
   // for the base actor/item classes - they are included
-  // with the Character as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
     character: models.HtbahCharacter,
   };

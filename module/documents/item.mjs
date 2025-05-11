@@ -65,7 +65,7 @@ export class HtbahItem extends Item {
         rollMode: rollMode,
         flavor: label,
       });
-      return roll();
+      return roll;
     }
   }
 }

@@ -37,7 +37,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   };
 
   /** @override */
-    static PARTS = {
+  static PARTS = {
     header: {
       template: 'systems/htbah/templates/actor/header.hbs',
     },
@@ -98,6 +98,9 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
       // Adding a pointer to CONFIG.HTBAH
       config: CONFIG.HTBAH,
       tabs: this._getTabs(options.parts),
+      // Necessary for formInput and formFields helpers
+      fields: this.document.schema.fields,
+      systemFields: this.document.system.schema.fields,
     };
 
     // Offloading context prep to a helper function
@@ -283,7 +286,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     context.spells = spells;
   }
 
-   /**
+  /**
    * Actions performed after any render of the Application.
    * Post-render steps are not awaited by the render process.
    * @param {ApplicationRenderContext} context      Prepared context data
@@ -332,7 +335,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     });
     return fp.browse();
   }
-  
+
   /**
    * Renders an embedded document's sheet
    *
@@ -437,7 +440,6 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     }
   }
 
-  
   /** Helper Functions */
 
   /**

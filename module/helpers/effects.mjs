@@ -29,7 +29,7 @@ export function prepareActiveEffectCategories(effects) {
     else if (e.isTemporary) categories.temporary.effects.push(e);
     else categories.passive.effects.push(e);
   }
-  
+
   // Sort each category
   for (const c of Object.values(categories)) {
     c.effects.sort((a, b) => (a.sort || 0) - (b.sort || 0));

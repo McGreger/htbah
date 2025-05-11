@@ -1,5 +1,3 @@
-import HtbahDataModel from "./base-model.mjs";
-
 export default class HtbahItemBase extends foundry.abstract
   .TypeDataModel {
   static defineSchema() {
@@ -10,5 +8,4 @@ export default class HtbahItemBase extends foundry.abstract
 
     return schema;
   }
-
 }

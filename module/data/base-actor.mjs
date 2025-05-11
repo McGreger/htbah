@@ -16,7 +16,7 @@ export default class HtbahActorBase extends foundry.abstract
       max: new fields.NumberField({ ...requiredInteger, initial: 5 }),
     });
     schema.biography = new fields.HTMLField();
-    
+
     return schema;
   }
 }

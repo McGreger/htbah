@@ -244,7 +244,6 @@
 .htbah .sheet-header .header-fields {
   flex: 1;
 }
-
 .htbah .sheet-tabs {
   flex: 0;
 }
@@ -253,14 +252,12 @@
 .htbah .sheet-body .tab .editor {
   height: 100%;
 }
-
 .htbah .tab.biography {
   flex: 1;
 }
 .htbah .tab.biography .editor {
   height: 100%;
 }
-
 .htbah .tox .tox-editor-container {
   background: var(--htbah-c-white);
 }
@@ -270,7 +267,6 @@
 .htbah .resource-label {
   font-weight: bold;
 }
-
 .htbah .ability {
   margin-bottom: 2px;
 }
@@ -278,7 +274,6 @@
 .htbah .ability-mod {
   flex: 0 0 44px;
 }
-
 .htbah .items-header {
   height: 28px;
   margin: 2px 0;
@@ -329,7 +324,6 @@
   display: flex;
   flex: 0 0 20%;
   justify-content: flex-end;
-  
 }
 .htbah .items-list .item-controls a {
   font-size: 12px;
@@ -366,7 +360,7 @@
   padding: 0;
   align-items: center;
   background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
+  border: 2px groove var(--htbah-c-groove);
   font-weight: bold;
 }
 .htbah .items-list .items-header > * {
@@ -379,7 +373,6 @@
   margin: 0;
   padding: 5px;
 }
-
 .htbah .items-list .items-header .item-name {
   padding-left: 5px;
   text-align: left;
@@ -388,7 +381,6 @@
   flex: 0 0 200px;
   padding: 0 8px;
 }
-
 .htbah .effects-header {
   height: 28px;
   margin: 2px 0;
@@ -490,7 +482,6 @@
   flex: 0 0 200px;
   padding: 0 8px;
 }
-
 .htbah .effects .item .effect-source,
 .htbah .effects .item .effect-duration,
 .htbah .effects .item .effect-controls {

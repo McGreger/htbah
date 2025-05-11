@@ -56,7 +56,7 @@ export default class HtbahCharacter extends HtbahActorBase {
         (this.abilities[key].value - 10) / 2
       );
       // Handle ability label localization.
-      this.abilities[key].label = 
+      this.abilities[key].label =
         game.i18n.localize(CONFIG.HTBAH.abilities[key]) ?? key;
     }
   }

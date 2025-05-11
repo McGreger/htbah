@@ -1,8 +1,8 @@
-{{! Attributes Tab }}
+{{! Skills Tab }}
 <section
-  class='tab attributes {{tab.cssClass}}'
+  class='tab skills {{tab.cssClass}}'
   data-group='primary'
-  data-tab='attributes'
+  data-tab='skills'
 >
   <section class='grid grid-3col'>
     {{#each skillSets as |skillSet key|}}
@@ -61,15 +61,19 @@
               <a
                 class='item-control item-edit'
                 title='{{localize "DOCUMENT.Update" type='skill'}}'
+                data-action='viewDoc'
               >
                 <i class='fas fa-edit'></i>
               </a>
-              <a
-                class='item-control item-delete'
-                title='{{localize "DOCUMENT.Delete" type='skill'}}'
-              >
-                <i class='fas fa-trash'></i>
-              </a>
+              {{#if @root.editable}}
+                <a
+                  class='item-control item-delete'
+                  title='{{localize "DOCUMENT.Delete" type='skill'}}'
+                  data-action='deleteDoc'
+                >
+                  <i class='fas fa-trash'></i>
+                </a>
+              {{/if}}
             </div>
           </li>
         {{/each}}

@@ -5,6 +5,7 @@ export default class HtbahSpell extends HtbahItemBase {
     'HTBAH.Item.base',
     'HTBAH.Item.Spell',
   ];
+
   static defineSchema() {
     const fields = foundry.data.fields;
     const schema = super.defineSchema();

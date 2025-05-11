@@ -1,8 +1,12 @@
 # Htbah System
 
-![Foundry v11](https://img.shields.io/badge/foundry-v11-green)
+![Foundry v11](https://img.shields.io/badge/foundry-v11-green) ![Foundry v12](https://img.shields.io/badge/foundry-v12-green)
 
 This system is a htbah system that you can use as a starting point for building your own custom systems. It's similar to Simple World-building, but has examples of creating attributes in code rather than dynamically through the UI.
+
+> **Tutorial Updates are WIP**
+> 
+> The v12 branch of Htbah has switched to using Foundry's ApplicationV2 version of document sheets, and the updates for the accompanying tutorial on the wiki are still in progress. Feel free to use this version of the system, but you'll need to use the comments within the actor and item sheet classes for context on what's happening vs. reading the tutorial.
 
 ## Usage
 
@@ -12,7 +16,7 @@ Regardless of which method you choose, think carefully about your system's name.
 
 > **Data Models**
 >
-> If you would like to use DataModel classes instead of the older template.json configuration, you'll need to use the `npm run generate` command described below and choose to enable them when asked. DataModels are currently an optional skill, and are only availabe in the generator CLI due to that.
+> If you would like to use DataModel classes instead of the older template.json configuration, you'll need to use the `npm run generate` command described below and choose to enable them when asked. DataModels are currently an optional feature, and are only availabe in the generator CLI due to that.
 
 ### Generator
 
