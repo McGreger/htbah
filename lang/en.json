@@ -63,6 +63,12 @@
           "weight": {"label": "Weight"}
         }
       },
+      "Skill": {
+        "FIELDS":{
+          "set": {"label": "Skill Set"},
+          "rank": {"label": "Skill Rank"}
+        }
+      },
       "Spell": {
         "FIELDS": {
           "level": {"label": "Spell Level"}

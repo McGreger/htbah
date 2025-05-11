@@ -35,9 +35,9 @@
     {{/if}}
     {{#if (eq item.type 'skill')}}
       <div class='ranks grid grid-4col'>
-        <label class="resource-label">Ranks</label>
+        <label class="resource-label">{{localize 'HTBAH.Item.Skill.FIELDS.rank.label'}}</label>
         <input class="input-ranks" type="number" name="system.ranks" value="{{system.ranks}}" />
-        <label class="resource-label">Skill Set</label>
+        <label class="resource-label">{{localize 'HTBAH.Item.Skill.FIELDS.set.label'}}</label>
         <select name="system.set">
           {{#each config.skillSets as |set key|}}
             <option value="{{key}}" {{#if (eq ../system.set key)}}selected{{/if}}>

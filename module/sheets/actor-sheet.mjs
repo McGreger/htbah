@@ -110,6 +110,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   async _preparePartContext(partId, context) {
     switch (partId) {
       case 'skills':
+        context.tab = context.tabs[partId];
       case 'spells':
       case 'gear':
         context.tab = context.tabs[partId];
@@ -247,8 +248,6 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     context.gear = gear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
     context.skills = skills.sort((a, b) => (a.sort || 0) - (b.sort || 0));
     context.spells = spells;
-
-    debugger;
 
     // skillSet business logic
     const skillSets = Object

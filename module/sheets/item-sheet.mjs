@@ -46,8 +46,7 @@ export class HtbahItemSheet extends api.HandlebarsApplicationMixin(
       template: 'systems/htbah/templates/item/description.hbs',
     },
     attributesSkill: {
-      template:
-        'systems/htbah/templates/item/attribute-parts/skill.hbs',
+      template: 'systems/htbah/templates/item/attribute-parts/skill.hbs',
     },
     attributesGear: {
       template: 'systems/htbah/templates/item/attribute-parts/gear.hbs',
