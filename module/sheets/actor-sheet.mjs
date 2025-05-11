@@ -245,6 +245,10 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
 
     // Sort then assign
     context.gear = gear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+    context.skills = skills.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+    context.spells = spells;
+
+    debugger;
 
     // skillSet business logic
     const skillSets = Object
@@ -278,9 +282,6 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
       };
     });
     context.skillSets = skillSets;
-    context.skills = skills.sort((a, b) => (a.sort || 0) - (b.sort || 0));
-
-    context.spells = spells;
   }
 
   /**
