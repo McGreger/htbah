@@ -12,9 +12,6 @@
     "Actor": {
         "character": {
             "htmlFields": ["biography"]
-        },
-        "npc": {
-            "htmlFields": ["biography"]
         }
     },
     "Item": {

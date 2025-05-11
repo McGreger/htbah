@@ -61,7 +61,8 @@
     },
     "skill": {
       "templates": ["base"],
-      "ranks": 0
+      "ranks": 0,
+      "set": "phy"
     },
     "spell": {
       "templates": ["base"],
