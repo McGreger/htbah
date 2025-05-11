@@ -8,6 +8,33 @@
       "discord": "McGreger"
     }
   ],
+  "documentTypes": {
+    "Actor": {
+        "character": {
+            "htmlFields": ["biography"]
+        },
+        "npc": {
+            "htmlFields": ["biography"]
+        }
+    },
+    "Item": {
+        "skill": {
+            "htmlFields": ["description"]
+        },
+        "gear": {
+            "htmlFields": ["description"]
+        },
+        "spell": {
+            "htmlFields": ["description"]
+        }
+    }
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "html", "hbs", "json"],
+      "paths": ["css", "lang", "templates"]
+    }
+  },
   "url": "Replace this with a link to your public repository",
   "license": "LICENSE.txt",
   "readme": "README.md",
@@ -15,8 +42,8 @@
   "changelog": "CHANGELOG.md",
   "version": "0.1.0",
   "compatibility": {
-    "minimum": 12,
-    "verified": "12.331"
+    "minimum": "12.328",
+    "verified": "12.328"
   },
   "esmodules": ["module/htbah.mjs"],
   "styles": ["css/htbah.css"],
@@ -33,8 +60,10 @@
   "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
   "download": "This must link to a .zip file of the current version",
   "grid": {
+    "type": 1,
     "distance": 5,
-    "units": "ft"
+    "units": "ft",
+    "diagonals": 0
   },
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"

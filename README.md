@@ -12,7 +12,7 @@ Regardless of which method you choose, think carefully about your system's name.
 
 > **Data Models**
 >
-> If you would like to use DataModel classes instead of the older template.json configuration, you'll need to use the `npm run generate` command described below and choose to enable them when asked. DataModels are currently an optional feature, and are only availabe in the generator CLI due to that.
+> If you would like to use DataModel classes instead of the older template.json configuration, you'll need to use the `npm run generate` command described below and choose to enable them when asked. DataModels are currently an optional skill, and are only availabe in the generator CLI due to that.
 
 ### Generator
 

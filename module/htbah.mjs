@@ -27,6 +27,7 @@ globalThis.htbah = {
   utils: {
     rollItemMacro,
   },
+  models,
 };
 
 Hooks.once('init', function () {
@@ -50,13 +51,13 @@ Hooks.once('init', function () {
   // with the Character as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
     character: models.HtbahCharacter,
-  }
+  };
   CONFIG.Item.documentClass = HtbahItem;
   CONFIG.Item.dataModels = {
-    item: models.HtbahItem,
+    gear: models.HtbahGear,
     skill: models.HtbahSkill,
-    spell: models.HtbahSpell
-  }
+    spell: models.HtbahSpell,
+  };
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item

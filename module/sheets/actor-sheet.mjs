@@ -45,8 +45,8 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
       // Foundry-provided generic template
       template: 'templates/generic/tab-navigation.hbs',
     },
-    features: {
-      template: 'systems/htbah/templates/actor/features.hbs',
+    skills: {
+      template: 'systems/htbah/templates/actor/skills.hbs',
     },
     biography: {
       template: 'systems/htbah/templates/actor/biography.hbs',
@@ -72,7 +72,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     // Control which parts show based on document subtype
     switch (this.document.type) {
       case 'character':
-        options.parts.push('features', 'gear', 'spells', 'effects');
+        options.parts.push('skills', 'gear', 'spells', 'effects');
         break;
       case 'npc':
         options.parts.push('gear', 'effects');
