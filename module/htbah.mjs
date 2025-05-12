@@ -5,24 +5,32 @@ import { HtbahItem } from './documents/item.mjs';
 import { HtbahActorSheet } from './sheets/actor-sheet.mjs';
 import { HtbahItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
-import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { HTBAH } from './helpers/config.mjs';
 // Import DataModel classes
-import * as models from './dataModels/_module.mjs';
+import * as models from './data/_module.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once('init', function () {
-  // Add utility classes to the global game object so that they're more easily
-  // accessible in global contexts.
-  game.htbah = {
+// Add key classes to the global scope so they can be more easily used
+// by downstream developers
+globalThis.htbah = {
+  documents: {
     HtbahActor,
     HtbahItem,
+  },
+  applications: {
+    HtbahActorSheet,
+    HtbahItemSheet,
+  },
+  utils: {
     rollItemMacro,
-  };
+  },
+  models,
+};
 
+Hooks.once('init', function () {
   // Add custom constants for configuration.
   CONFIG.HTBAH = HTBAH;
 
@@ -40,16 +48,15 @@ Hooks.once('init', function () {
 
   // Note that you don't need to declare a DataModel
   // for the base actor/item classes - they are included
-  // with the Character as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
     character: models.HtbahCharacter,
-  }
+  };
   CONFIG.Item.documentClass = HtbahItem;
   CONFIG.Item.dataModels = {
-    item: models.HtbahItem,
+    gear: models.HtbahGear,
     skill: models.HtbahSkill,
-    spell: models.HtbahSpell
-  }
+    spell: models.HtbahSpell,
+  };
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
@@ -67,9 +74,6 @@ Hooks.once('init', function () {
     makeDefault: true,
     label: 'HTBAH.SheetLabels.Item',
   });
-
-  // Preload Handlebars templates.
-  return preloadHandlebarsTemplates();
 });
 
 /* -------------------------------------------- */
@@ -87,7 +91,7 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 
 Hooks.once('ready', function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+  Hooks.on('hotbarDrop', (bar, data, slot) => createDocMacro(data, slot));
 });
 
 /* -------------------------------------------- */
@@ -101,7 +105,7 @@ Hooks.once('ready', function () {
  * @param {number} slot     The hotbar slot to use
  * @returns {Promise}
  */
-async function createItemMacro(data, slot) {
+async function createDocMacro(data, slot) {
   // First, determine if this is a valid owned item.
   if (data.type !== 'Item') return;
   if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {

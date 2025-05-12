@@ -5,8 +5,32 @@
       "Kno": { "label": "Knowledge", "abbr": "kno"},
       "Soc": { "label": "Social", "abbr": "soc"}
     },
-
     "Actor": {
+      "Tabs": {
+        "Biography": "Biography",
+        "Skills": "Skills",
+        "Gear": "Gear",
+        "Spells": "Spells",
+        "Effects": "Effects"
+      },
+      "base": {
+        "FIELDS": {
+          "biography": {"label": "Biography"},
+          "health": {
+            "value": {"label": "Health"},
+            "max": {"label": "Maximum Health"}
+          },
+          "power": {
+            "value": {"label": "Power"},
+            "max": {"label": "Maximum Power"}
+          }
+        }
+      },
+      "Character": {
+        "FIELDS": {
+          "attributes.level.value": {"label": "Level"}
+        }
+      },
       "EurekaPoints": { "label": "Eureka Points"},
       "SkillSetMod": { "label": "Modifier"}
     },
@@ -24,7 +48,31 @@
       "Item": "Htbah Item Sheet"
     },
     "Item": {
+      "Tabs": {
+        "Attributes": "Attributes",
+        "Description": "Description",
+        "Effects": "Effects"
+      },
+      "Gear": {
+        "FIELDS": {
+          "rollFormula": {"label": "Roll Formula"},
+          "numDice": {"label": "Number of Dice"},
+          "dieSize": {"label": "Die Size"},
+          "rollMod": {"label": "Roll Modifier"},
+          "quantity": {"label": "Quantity"},
+          "weight": {"label": "Weight"}
+        }
+      },
+      "Skill": {
+        "FIELDS":{
+          "set": {"label": "Skill Set"},
+          "rank": {"label": "Skill Rank"}
+        }
+      },
       "Spell": {
+        "FIELDS": {
+          "level": {"label": "Spell Level"}
+        },
         "SpellLVL": "Level {level} Spells",
         "AddLVL": "Add LVL {level}"
       }
@@ -37,13 +85,12 @@
       "Inactive": "Inactive Effects"
     }
   },
-
   "TYPES": {
     "Actor": {
       "character": "Character"
     },
     "Item": {
-      "item": "Item",
+      "gear": "Gear",
       "skill": "Skill",
       "spell": "Spell"
     }

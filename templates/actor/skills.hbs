@@ -1,0 +1,100 @@
+{{! Skills Tab }}
+<section
+  class='tab skills {{tab.cssClass}}'
+  data-group='primary'
+  data-tab='skills'
+>
+  <section class='grid grid-3col'>
+    {{#each skillSets as |skillSet key|}}
+      <ol class='items-list skillset' data-item-id='{{this.key}}'>
+        <li class='item flexrow items-header skillset-header' >
+          <div class='skillset-icon'>
+            <a class='rollable' data-roll-type='item'>
+              <img 
+                class='skill-icon'
+                src='{{icon}}'
+                title='{{label}}'
+                width='30'
+                height='30'
+              />
+            </a>
+          </div>
+          <div class='skillset-label flexcol'>
+            <h2 class='resource-label'>{{localize label}}</h2>
+            <label>Modifier: {{mod}}</label>
+          </div>
+          <div class='skillset-eureka flexrow'>
+            <a class='rollable eureka-icon' data-roll-type='item'>
+              <img 
+                class='skill-icon'
+                src='systems/htbah/assets/icons/brainstorm.svg'
+                title='{{label}}'
+                width='25'
+                height='25'
+              />
+            </a>
+            <input
+              class="eureka-input"
+              type="number"
+              name="system.skillSets.eureka.{{this.key}}.value"
+              value="{{eureka.value}}"
+              min="0"
+              max="{{eureka.max}}"
+            />
+            <label class="eureka-total">/ {{eureka.max}}</label>
+          </div>
+        </li>
+        {{#each this.skills as |item id|}}
+          <li 
+            class='item flexrow skill-row'
+            data-item-id='{{item._id}}'
+            data-drag='true'
+            data-document-class='Item'
+          >
+            <div class='skill'>
+              <span class='skill-name'>{{item.name}}<span>
+            </div>
+            <div class="flexrow skill-modifiers">
+              <input
+                class="skill-ranks"
+                type="number"
+                value="{{system.ranks}}"
+              />
+              /<span class="skill-dc rollable" data-roll="d100" data-label="{{item.name}}">{{system.total}}</span>
+            </div>
+            <div class='item-controls'>
+              <a
+                class='item-control item-edit'
+                title='{{localize "DOCUMENT.Update" type='skill'}}'
+                data-action='viewDoc'
+              >
+                <i class='fas fa-edit'></i>
+              </a>
+              {{#if @root.editable}}
+                <a
+                  class='item-control item-delete'
+                  title='{{localize "DOCUMENT.Delete" type='skill'}}'
+                  data-action='deleteDoc'
+                >
+                  <i class='fas fa-trash'></i>
+                </a>
+              {{/if}}
+            </div>
+          </li>
+        {{/each}}
+        {{#if @root.editable}}
+          <a
+            class='item-control-footer item-create'
+            title='{{localize "DOCUMENT.Create" type='Item'}}'
+            data-action='createDoc'
+            data-document-class='Item'
+            data-type='skill'
+          >
+            <i class='fas fa-plus'></i>
+            {{localize 'DOCUMENT.New' type='item'}}
+          </a>
+        {{/if}}
+      </ol>
+    {{/each}}
+  </section>
+</section>
