@@ -84,7 +84,6 @@ export class HtbahItemSheet extends api.HandlebarsApplicationMixin(
 
   /** @override */
   async _prepareContext(options) {
-    debugger;
     const context = {
       // Validates both permissions and compendium status
       editable: this.isEditable,
