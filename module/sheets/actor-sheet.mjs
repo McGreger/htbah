@@ -207,6 +207,8 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     // You can just use `this.document.itemTypes` instead
     // if you don't need to subdivide a given type like
     // this sheet does with spells
+    
+    debugger;
     const gear = [];
     const skills = [];
     const spells = {
@@ -261,18 +263,14 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
   
       // Attach derived display.total value
       for (const skill of filteredSkills) {
-        const ranks = skill.system.ranks || 0;
-        skill.system = {
-          ...skill.system,
-          total: ranks + mod
-        };
+        skill.system.total = skill.system.ranks + mod;
       }
   
       return {
         key,
         label: game.i18n.localize(set.label),
         icon: set.icon,
-        skills: filteredSkills, // original skills preserved
+        skills: filteredSkills,
         mod,
         eureka: {
           value: eurekaValue,

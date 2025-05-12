@@ -19,6 +19,10 @@
   --htbah-c-groove: #11121f;
 }
 
+.theme-dark .htbah .skillset-header img[src$=".svg"] {
+  filter: invert(1);
+}
+
 /* Global styles */
 .window-app {
   font-family: "Roboto", sans-serif;
@@ -561,7 +565,7 @@
 }
 
 .htbah .eureka-input {
-  width: 3em;
+  width: 2em;
   text-align: center;
   font-size: 13px;
   height: 1.8em;
@@ -627,4 +631,23 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3em; /* Optional: spacing between icon and text */
+}
+
+.htbah input[type="number"],
+.htbah input[type="text"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #999;
+  border-radius: 0;
+  padding: 0 0.3em;
+  height: 1.4em;
+  font-size: 13px;
+  box-shadow: none;
+  outline: none;
+}
+
+.htbah input[type="number"]:focus,
+.htbah input[type="text"]:focus {
+  border-bottom: 1px solid #007acc;
+  box-shadow: none;
 }
