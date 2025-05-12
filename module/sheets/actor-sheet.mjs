@@ -208,7 +208,6 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     // if you don't need to subdivide a given type like
     // this sheet does with spells
     
-    debugger;
     const gear = [];
     const skills = [];
     const spells = {
@@ -295,6 +294,29 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
     // You may want to add other special handling here
     // Foundry comes with a large number of utility classes, e.g. SearchFilter
     // That you may want to implement yourself.
+
+    // Focus on inputable items
+    const inputs = this.element.querySelectorAll("input");
+    for (const input of inputs) {
+      input.addEventListener("focus", () => input.select());
+    }
+
+    // Custom update handler for skill ranks
+    const skillRanks = this.element.querySelectorAll('.skill-ranks')
+    for (const input of skillRanks) {
+      // keep in mind that if your callback is a named function instead of an arrow function expression
+      // you'll need to use `bind(this)` to maintain context
+      input.addEventListener("change", (e) => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        const newRank = e.currentTarget.value
+        // assuming the item's ID is in the input's `data-item-id` attribute
+        const itemId = e.currentTarget.dataset.itemId
+        const item = this.actor.items.get(itemId)
+        // the following is asynchronous and assumes the quantity is in the path `system.quantity`
+        item.update({ system: { ranks: newRank }});
+      })
+    }
   }
 
   /**************
@@ -765,6 +787,7 @@ export class HtbahActorSheet extends api.HandlebarsApplicationMixin(
    * @override
    */
   async _processSubmitData(event, form, submitData) {
+    debugger;
     const overrides = foundry.utils.flattenObject(this.actor.overrides);
     for (let k of Object.keys(overrides)) delete submitData[k];
     await this.document.update(submitData);
